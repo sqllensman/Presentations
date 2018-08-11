@@ -9,6 +9,8 @@ AdventureWorks2014
 AdventureWorksDW2014
 
 Available from Microsoft GitHub repository
+https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks
 
 
-Files from Corruption Challenge : http://stevestedman.com/category/corruption/
+Files from Corruption Challenge 
+http://stevestedman.com/category/corruption/
