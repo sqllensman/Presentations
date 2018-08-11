@@ -1,13 +1,11 @@
-﻿#Return 'This is a demo, don''t run the whole thing, fool!!'
+﻿
 #Remove-Module dbatools
-Import-Module -Name 'C:\GitHub\dbatools\dbatools.psd1'
+Import-Module -Name dbatools
 
-
-$server = 'LensmanSB'
-$DatabaseName = 'pubs'
-$BasePath = 'C:\Lensman\Output\DatabaseScripts'
-$Dir = $BasePath +'\' + $server #+ $(get-date -f yyyy-MM-dd_HH_mm_ss)
-
+$server = 'W2016Base'
+$DatabaseName = 'AdventureWorks2014'
+$BasePath = 'C:\GIT\DatabaseScripts'
+$Dir = $BasePath +'\' + $server 
 
 # Create Directory if Required
 if(!(Test-Path -Path $Dir )){
@@ -23,7 +21,7 @@ $Options.NoCommandTerminator = $false
 $Options.ScriptBatchTerminator = $true 
 $Options.AnsiFile = $true
 
-$Databases = Get-DbaDatabase -SqlInstance $server -Database $DatabaseName   #-ExcludeDatabase master, model, msdb,tempdb
+$Databases = Get-DbaDatabase -SqlInstance $server -ExcludeDatabase master, model, msdb,tempdb
 
 foreach ($db in $Databases) {
     $DirDatabase = $Dir + '\' + $db.Name
@@ -268,7 +266,6 @@ foreach ($db in $Databases) {
         }
     }
     #endregion
-
 
     #region Assemblies Creation
     $Assemblies = ($db.Assemblies | Where-Object {$_.IsSystemObject -eq $false})

@@ -1,6 +1,10 @@
 ﻿Return 'This is a demo, don''t run the whole thing, fool!!'
 
 Import-Module -Name dbatools
+#Remove-Module dbatools
+#Import-Module -Name 'C:\GitHub\dbatools\dbatools.psd1'
+
+$ReportInstance = 'W2016BASE\SQL2017'
 
 # Module Path and Version
 Get-Module -Name dbatools | Select Path, Version | Out-GridView
@@ -32,18 +36,15 @@ Find-DbaCommand -Tag Memory | Out-GridView
 Find-DbaCommand -Tag Snapshot | Out-GridView
 
 
-Find-DbaCommand -Tag Perfmon | Format-Table
+Find-DbaCommand -Tag Perfmon | Out-GridView
 
 
 Find-DbaCommand -Pattern User | Out-GridView 
 Find-DbaCommand -Pattern linked | Out-GridView
-
-Find-DbaCommand -Pattern dbatools | Out-GridView
-
 Find-DbaCommand -Pattern log | Out-GridView
 
 # Save to a Table to allow querying
-Find-DbaCommand * | Select CommandName, Synopsis, Description, Tags, Links | Write-DbaDataTable -SqlInstance W2016BASE\SQL2017 -Database dbareports -AutoCreateTable -Table DBACommands1
+Find-DbaCommand * | Select CommandName, Synopsis, Description, Tags, Links | Write-DbaDataTable -SqlInstance $ReportInstance -Database dbareports -AutoCreateTable -Table DBACommands
 
 ## How do we use commands?
 
@@ -76,42 +77,26 @@ Start-Process 'https://dbatools.io/real-world-tde-database-migrations/'
 
 
 # Get Information at Computer Level
+$ComputerList = @('W2016BASE')
+$ComputerList = @('WIN-2012-SQL01','W2016BASE')
 
-Get-DbaComputerSystem -ComputerName W2016Base | Out-GridView
-Get-DbaOperatingSystem -ComputerName W2016Base | Out-GridView
-Get-DbaSqlService -ComputerName W2016Base | Out-GridView
-Get-DbaPageFileSetting -ComputerName W2016Base | Out-GridView
+Get-DbaComputerSystem -ComputerName $ComputerList | Out-GridView
+Get-DbaOperatingSystem -ComputerName $ComputerList | Out-GridView
+Get-DbaSqlService -ComputerName $ComputerList | Out-GridView
 
-Get-DbaDiskSpace -ComputerName W2016Base | Select * | Out-GridView
+Get-DbaDiskSpace -ComputerName $ComputerList | Select * | Out-GridView
+
+Get-DbaDiskSpace -ComputerName $ComputerList | Select * | ConvertTo-DbaDataTable | Write-DbaDataTable -SqlInstance $ReportInstance -Database dbareports -Table DiskSpaceExample -AutoCreateTable
+
+
+
+
 
 
 # Installed Features
 Get-DbaSqlFeature -ComputerName W2016Base | Out-GridView
 
 
-#region Backups and testing restores
-## Everyone tests their restores correct?
-## Lets back up those new databases to a Network Share
-Backup-DbaDatabase -SqlInstance W2016BASE\SQL2017 -BackupDirectory "\\vmware-host\Shared Folders\SQL_DATA\SQLSaturday" -ExcludeDatabase master,model,msdb -Checksum
-
-
-# and test ALL of our backups :-)
-Test-DbaLastBackup -SqlInstance W2016BASE  | Out-GridView
-
-## You 'could' just verify them
-Test-DbaLastBackup -SqlInstance W2016BASE -Destination W2016base\SQL2017 -VerifyOnly | Out-GridView
-
-# What databases are available
-Get-DbaDatabase -SqlInstance w2016base\sql2017 | Out-GridView
-
-## Restore them to a different instance
-Restore-DbaDatabase -SqlInstance w2016base\SQL2017 -Path '\\vmware-host\Shared Folders\SQL_DATA\SQLSaturday' -DestinationDataDirectory C:\SQL_DATA\2017\Data -DestinationLogDirectory C:\SQL_DATA\2017\Log -WithReplace
-
-# Cleanup
-Remove-DbaDatabase -SqlInstance w2016base\SQL2017 -Databases AdventureWorks2014, AdventureWorksDW2014, AdventureWorksLT2008, DBA_Metrics, DBCC
-
-# What databases are available
-Get-DbaDatabase -SqlInstance w2016base\sql2017 | Out-GridView
 
 ## So you can see there are a lot of backup and restore and copy commands available. I urge you to explore them
 ## Use Find-DbaCommand
@@ -154,6 +139,16 @@ Get-DbaAgentLog -SqlInstance $InstanceList | Out-GridView
 Get-DbaSqlLog -SqlInstance $InstanceList | Out-GridView
 
 
+
+Get-DbaLastBackup -SqlInstance $InstanceList | Out-GridView
+
+$InstanceList | Get-DbaLastBackup | Where-Object LastFullBackup -eq $null | Out-GridView
+
+
+
+
+
+
 # Who Is Active
 Find-DbaCommand -Pattern WhoIsActive | Out-GridView
 
@@ -163,6 +158,7 @@ Install-DbaWhoIsActive -SqlInstance $InstanceList -LocalFile 'C:\SQLSaturday\Bri
 
 ## Performance Statistics
 Get-DbaWaitStatistic -SqlInstance $InstanceList | Out-GridView
+Get-DbaWaitingTask -SqlInstance $InstanceList | Out-GridView 
 
 Get-DbaTopResourceUsage -SqlInstance w2016base\SQL2017 -Type CPU | Out-GridView
 Get-DbaTopResourceUsage -SqlInstance w2016base\SQL2017 -Type IO | Out-GridView
@@ -190,5 +186,11 @@ Measure-Command {Get-DbaLastGoodCheckDb -SqlInstance $InstanceList | Out-GridVie
 #wanna read a transaction log - Live ??
 Read-DbaTransactionLog -SqlInstance W2016Base\SQL2017 -Database dbareports |ogv
 
-# Maintains list of Current Builds
-Test-DbaSqlBuild -Build "13.0.5026" -Latest
+
+# Test/Set SQL max memory
+
+$InstanceList | Get-DbaMaxMemory | Out-GridView
+
+$InstanceList | Test-DbaMaxMemory | Out-GridView
+
+Set-DbaMaxMemory -SqlInstance $ReportInstance -MaxMb 4096 -WhatIf
