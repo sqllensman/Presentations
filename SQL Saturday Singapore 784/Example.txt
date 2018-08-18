@@ -1,0 +1,83 @@
+:remote connect tinkerpop.server conf/remote-secure.yaml
+:remote console 
+
+g.addV('employee').property('id', 'u001').property('firstName', 'John').property('age', 44)
+g.addV('employee').property('id', 'u002').property('firstName', 'Mary').property('age', 37)
+g.addV('employee').property('id', 'u003').property('firstName', 'Christie').property('age', 30).property('FavouriteColour', 'Blue')  
+g.addV('employee').property('id', 'u004').property('firstName', 'Bob').property('age', 35)
+g.addV('employee').property('id', 'u005').property('firstName', 'Susan').property('age', 31)
+g.addV('employee').property('id', 'u006').property('firstName', 'Emily').property('age', 29).property('cat','Bustopher Jones')
+
+g.V('u002').addE('manager').to(g.V('u001'))
+g.V('u005').addE('manager').to(g.V('u001'))
+g.V('u004').addE('manager').to(g.V('u002'))
+g.V('u005').addE('friend').to(g.V('u006'))
+g.V('u005').addE('friend').to(g.V('u003'))
+g.V('u006').addE('friend').to(g.V('u003'))
+g.V('u006').addE('manager').to(g.V('u004'))
+
+
+
+g.V()
+g.V().valueMap()
+
+
+
+g.V().hasLabel('employee')
+g.V().hasLabel('employee').values("firstName")
+g.V().hasLabel('employee').valueMap("firstName", "age")
+
+g.V().hasLabel('employee').has('age', gt(40))
+g.V().hasLabel('employee').and(has('age', gt(35)), has('age', lt(40)))
+
+
+g.V('u002').outE('manager').inV().hasLabel('employee')
+g.V('u002').outE('manager').inV().hasLabel('employee').values("firstName")
+
+g.V('u002').out('manager').hasLabel('employee').in('manager').hasLabel('employee')
+g.V('u002').out('manager').hasLabel('employee').in('manager').hasLabel('employee').values("firstName")
+
+
+g.V('u006').both('friend').hasLabel('employee')
+g.V('u006').both('friend').hasLabel('employee').values("firstName")
+g.V('u006').both('friend').hasLabel('employee').order().by('firstName', decr).values("firstName")
+
+
+
+
+
+g.V('u006').repeat(union(both('friend').simplePath(), out('manager').simplePath())).until(has('id', 'u001')).path()
+g.V('u006').repeat(union(both('friend').simplePath(), out('manager').simplePath())).until(has('id', 'u001')).path().count(local)
+
+g.V('u006').repeat(union(both('friend').simplePath(), out('manager').simplePath())).until(has('id', 'u001')).path().group().by(count(local))
+
+
+-- Can also go via Edges
+g.V('u006').repeat(union(both('friend').simplePath(), out('manager').simplePath())).until(has('id', 'u001')).path() 
+g.E().hasLabel('friend')
+
+
+-- Update
+g.V().hasLabel('employee').has('firstName','John').property('age', 45)
+
+-- Delete Vertex
+g.V('u006').drop()
+
+-- Delete Edge
+g.V('u006').outE('friend').drop()
+
+g.V('u006').addE('friend').to(g.V('u003')).property('weight','0.9')
+
+
+
+g.V(vertex.id()).outE('votes_for').has('type', 'eat')
+    .where(__.inV().hasLabel('meal').has('name','pizza')) // filter for the edge to update
+    .tryNext()                                            // select the edge if it exists
+    .orElseGet({g.V(vertex.id()).next()
+        .addEdge('votes_for', g.V(pizzaId).next(), 'type', 'eat')}) // otherwise, add the edge
+    .property('weight', 0.99)   
+
+
+
+
+
