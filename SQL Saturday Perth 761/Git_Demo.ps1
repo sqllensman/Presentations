@@ -1,4 +1,4 @@
-
+# https://github.com/sqlcollaborative/dbatools
 
 
 
@@ -6,12 +6,17 @@ set-location c:\github
 
 git clone https://github.com/sqllensman/dbatools.git
 
+
 set-location c:\github\dbatools
+
+
+git status
 
 git checkout development
 
 git status
 
+git remote -v
 git remote add upstream https://github.com/sqlcollaborative/dbatools.git
 
 #git remote set-url upstream https://github.com/sqlcollaborative/dbatools.git
@@ -19,33 +24,30 @@ git remote add upstream https://github.com/sqlcollaborative/dbatools.git
 git remote -v
 
 # Create a new Branch and Checkout
-git branch SQLSaturday
-git checkout SQLSaturday
+git branch SQLSatPerth
+git checkout SQLSatPerth
 
 git status
 
-git add *
-
-git commit -m "Addittional Change"
-
-# Push backup to GitHub Repository
-git push -u origin SQLSaturday
-
-git push --set-upstream origin SQLSaturday
-
+# Add Changes to Export-DbaScript
 
 git add *
-
-git commit -m "Adding Functions for Latch Statistics, Spin Statistics and IO Latency"
 
 git status
 
-git push origin SQLSaturday
+git commit -m "Changes to Export-DbaScript to resolve Issue 3867"
+
+git status
+
 
 git checkout development
-git merge SQLSaturday
+git merge SQLSatPerth
 
-git pull
+git status
+
+git push
+
+git status
 
 
 # Git Examples
