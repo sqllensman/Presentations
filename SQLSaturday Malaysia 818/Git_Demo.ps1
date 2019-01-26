@@ -4,8 +4,7 @@ Return 'This is a demo, don''t run the whole thing, fool!!'
 
 set-location c:\github
 
-git clone https://github.com/sqllensman/dbatools.git
-
+git clone https://github.com/sqlcollaborative/dbatools.git
 
 set-location c:\github\dbatools
 
@@ -29,7 +28,7 @@ git checkout SQLSatMalaysia
 
 git status
 
-# Add Changes to ???
+# Add Changes to Set-DbaDbState - https://github.com/sqlcollaborative/dbatools/issues/4899
 
 git add *
 
