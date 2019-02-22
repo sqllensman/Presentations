@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DatabaseInternals">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="Admin:LENSMANSB:LENSMANSB\sqlle">
+          <Created>2018-09-01T19:08:19.9124055+10:00</Created>
+          <Type>SQL</Type>
+          <Server>Admin:LENSMANSB</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="LENSMANSB:LENSMANSB\sqlle">
+          <Created>2018-09-01T07:17:24.4239042+10:00</Created>
+          <Type>SQL</Type>
+          <Server>LENSMANSB</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>PowerBIInternals</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="00.Instructions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>00.Instructions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="01.NorthWInd.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01.NorthWInd.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02.DatabaseInfo.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02.DatabaseInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03.PageData.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03.PageData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04.SystemTables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:Admin:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>Admin:LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04.SystemTables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05.PageDataDetail.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05.PageDataDetail.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06.ViewData.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06.ViewData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07.IndexRecord.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>07.IndexRecord.sql</FullPath>
+        </FileNode>
+        <FileNode Name="08.AllocationPages.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>08.AllocationPages.sql</FullPath>
+        </FileNode>
+        <FileNode Name="09.PageSplits.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>09.PageSplits.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10.GetData.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>10.GetData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11.ForwardingPointer.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>11.ForwardingPointer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12.AllocationPages.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>12.AllocationPages.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13.PageHierachy.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LENSMANSB:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LENSMANSB</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>13.PageHierachy.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
