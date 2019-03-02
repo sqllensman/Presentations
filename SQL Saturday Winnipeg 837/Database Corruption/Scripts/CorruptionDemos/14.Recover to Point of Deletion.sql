@@ -26,9 +26,9 @@ END
 ---- May need run as Administrator to ensure no file permission errors
 ---- Original files in CorruptionChallenge7.zip
 CREATE DATABASE [CorruptionChallenge7] ON 
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7.mdf' ),
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_log.ldf' ),
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\UserObjects.ndf' )
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7.mdf' ),
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_log.ldf' ),
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\UserObjects.ndf' )
  FOR ATTACH
 GO
 
@@ -63,7 +63,7 @@ BeginTime	LSN
 */
 
 -- Backup tail of the log
-BACKUP LOG [CorruptionChallenge7] TO DISK = 'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_tail_log.trn'
+BACKUP LOG [CorruptionChallenge7] TO DISK = 'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_tail_log.trn'
 WITH NO_TRUNCATE, FORMAT
 
 -- Restore Log to Point of Deletion
@@ -79,39 +79,39 @@ BEGIN
 END
   
 RESTORE DATABASE [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_1.bak'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_1.bak'
 WITH NORECOVERY, REPLACE, STATS=10
-, MOVE 'CorruptionChallenge7' TO 'C:\DPS2018\DBFiles\Data\CorruptionChallenge7.mdf'
-, MOVE 'UserObjects' TO 'C:\DPS2018\DBFiles\Data\UserObjects.ndf'
-, MOVE 'CorruptionChallenge7_log' TO 'C:\DPS2018\DBFiles\Log\CorruptionChallenge7_log.ldf'
+, MOVE 'CorruptionChallenge7' TO 'C:\SQLSaturday\DBFiles\Data\CorruptionChallenge7.mdf'
+, MOVE 'UserObjects' TO 'C:\SQLSaturday\DBFiles\Data\UserObjects.ndf'
+, MOVE 'CorruptionChallenge7_log' TO 'C:\SQLSaturday\DBFiles\Log\CorruptionChallenge7_log.ldf'
   
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_0.trn'
-WITH NORECOVERY, REPLACE, STATS=10
-  
-RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_1.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_0.trn'
 WITH NORECOVERY, REPLACE, STATS=10
   
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_2.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_1.trn'
 WITH NORECOVERY, REPLACE, STATS=10
   
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_3.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_2.trn'
 WITH NORECOVERY, REPLACE, STATS=10
   
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_4.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_3.trn'
 WITH NORECOVERY, REPLACE, STATS=10
   
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_5.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_4.trn'
+WITH NORECOVERY, REPLACE, STATS=10
+  
+RESTORE LOG [CorruptionChallenge7]
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\TransLog_CorruptionChallenge7_5.trn'
 WITH NORECOVERY, REPLACE, STATS=10
   
 --==================================== IMPORTANT BIT ==================================
 RESTORE LOG [CorruptionChallenge7]
-FROM DISK='C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_tail_log.trn'
+FROM DISK='C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\CorruptionChallenge7_tail_log.trn'
 WITH NORECOVERY, REPLACE, STATS=10
 , STOPATMARK = 'lsn:0x00000025:00000270:0001';
 

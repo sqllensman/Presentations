@@ -1,8 +1,8 @@
 USE master
 GO
 
-:SETVAR BackupPath  "C:\DPS2018\DBFiles\SampleDB"
-:SETVAR RestorePath "C:\DPS2018\DBFiles"
+:SETVAR BackupPath  "C:\SQLSaturday\DBFiles\SampleDB"
+:SETVAR RestorePath "C:\SQLSaturday\DBFiles"
 :SETVAR BackupFile  "AdventureWorksDW2014.bak"
 
 IF EXISTS(SELECT name
@@ -31,10 +31,10 @@ GO
 
 -- Take initial backup
 BACKUP DATABASE [AdventureWorksDW2014]
-TO DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Full.bak'
+TO DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Full.bak'
 WITH FORMAT, CHECKSUM, STATS=5
 
 -- Take initial Log
 BACKUP LOG [AdventureWorksDW2014]
-TO DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Log_1.trn'
+TO DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Log_1.trn'
 WITH FORMAT, CHECKSUM, STATS=5
