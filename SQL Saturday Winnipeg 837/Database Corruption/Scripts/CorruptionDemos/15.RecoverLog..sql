@@ -5,9 +5,10 @@ Requires a copy for the Corruption Challenge 7 Files From SteveStedman.com
 
 http://stevestedman.com/2015/04/sql-server-2008-downloads-for-the-database-corruption-challenge-dbcc-week-1/
 
-*/
+https://stevestedman.com/2015/06/database-corruption-challenge-week-7-alternate-solution/
 
 */
+
 
 -- Step 1 Create database using supplied files
 USE master;
@@ -23,9 +24,9 @@ END
 --   Needs to be run as Administrator to ensure no file permission errors
 ---- Original files in CorruptionChallenge7.zip
 CREATE DATABASE [CorruptionChallenge7] ON 
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\CorruptionChallenge7.mdf' ),
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\CorruptionChallenge7_log.ldf' ),
-( FILENAME = N'C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\UserObjects.ndf' )
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\CorruptionChallenge7.mdf' ),
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\CorruptionChallenge7_log.ldf' ),
+( FILENAME = N'C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge7\ReadLog\UserObjects.ndf' )
  FOR ATTACH
 GO
 

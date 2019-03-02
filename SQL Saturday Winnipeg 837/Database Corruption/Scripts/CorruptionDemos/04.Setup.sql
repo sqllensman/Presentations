@@ -53,7 +53,7 @@ FROM dbo.Revenue
 -- undocumented sys.fn_PhysLocFormatter(%%physloc%%) function
 -- or equivalent table valued function sys.fn_PhysLocCracker(t.%%physloc%%)
 SELECT 
-	%%physloc%%,
+	%%physloc%% as PhysLoc,
 	sys.fn_PhysLocFormatter(%%physloc%%) AS 'File:Page:Slot',
 	fplc.file_id,
 	fplc.page_id,

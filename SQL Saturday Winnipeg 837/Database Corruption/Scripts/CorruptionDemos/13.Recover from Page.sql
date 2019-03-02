@@ -12,8 +12,8 @@ USE master;
 GO
 
 -- under SQLCMD Mode
-:SETVAR BackupPath  "C:\DPS2018\DBFiles\SampleDB\CorruptionChallenge4"
-:SETVAR RestorePath "C:\DPS2018\DBFiles"
+:SETVAR BackupPath  "C:\SQLSaturday\DBFiles\SampleDB\CorruptionChallenge4"
+:SETVAR RestorePath "C:\SQLSaturday\DBFiles"
 
 
 RESTORE HEADERONLY FROM DISK = '$(BackupPath)\CorruptionChallenge4_Corrupt.bak'

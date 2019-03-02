@@ -29,10 +29,10 @@ END
 
 -- start with a full restore of backup
 RESTORE DATABASE [CorruptionChallenge3]
-  FROM DISK = N'C:\DPS2018\DBFiles\Backup\CorruptionChallenge3_Full.bak'
+  FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\CorruptionChallenge3_Full.bak'
   WITH FILE = 1,
-       MOVE N'CorruptionChallenge3' TO N'C:\DPS2018\DBFiles\Data\CorruptionChallenge3.mdf',
-       MOVE N'CorruptionChallenge3_log' TO N'C:\DPS2018\DBFiles\Log\CorruptionChallenge3_log.ldf',
+       MOVE N'CorruptionChallenge3' TO N'C:\SQLSaturday\DBFiles\Data\CorruptionChallenge3.mdf',
+       MOVE N'CorruptionChallenge3_log' TO N'C:\SQLSaturday\DBFiles\Log\CorruptionChallenge3_log.ldf',
        REPLACE,
 	   RECOVERY;
 
@@ -67,7 +67,7 @@ from sys.databases WHERE name = 'CorruptionChallenge3'
 
 -- Take a Tail-of-Log Backup
 BACKUP LOG CorruptionChallenge3 
-TO Disk = 'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge_Tail.trn'
+TO Disk = 'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge_Tail.trn'
 WITH FORMAT , NO_TRUNCATE
 
 
@@ -75,31 +75,31 @@ WITH FORMAT , NO_TRUNCATE
 
 -- start with a full restore of backup
 RESTORE DATABASE [CorruptionChallenge3]
-  FROM DISK = N'C:\DPS2018\DBFiles\Backup\CorruptionChallenge3_Full.bak'
+  FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\CorruptionChallenge3_Full.bak'
   WITH FILE = 1,
-       MOVE N'CorruptionChallenge3' TO N'C:\DPS2018\DBFiles\Data\CorruptionChallenge3.mdf',
-       MOVE N'CorruptionChallenge3_log' TO N'C:\DPS2018\DBFiles\Log\CorruptionChallenge3_log.ldf',
+       MOVE N'CorruptionChallenge3' TO N'C:\SQLSaturday\DBFiles\Data\CorruptionChallenge3.mdf',
+       MOVE N'CorruptionChallenge3_log' TO N'C:\SQLSaturday\DBFiles\Log\CorruptionChallenge3_log.ldf',
        REPLACE,
 	   NORECOVERY;
 
 RESTORE LOG [CorruptionChallenge3]
-	FROM DISK = N'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge30.TRN'
+	FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge30.TRN'
 	WITH NORECOVERY;
 
 RESTORE LOG [CorruptionChallenge3]
-	FROM DISK = N'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge31.TRN'
+	FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge31.TRN'
 	WITH NORECOVERY;
 
 RESTORE LOG [CorruptionChallenge3]
-	FROM DISK = N'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge32.TRN'
+	FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge32.TRN'
 	WITH NORECOVERY;
 
 RESTORE LOG [CorruptionChallenge3]
-	FROM DISK = N'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge32.TRN'
+	FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge32.TRN'
 	WITH NORECOVERY;
 
 RESTORE LOG [CorruptionChallenge3]
-	FROM DISK = N'C:\DPS2018\DBFiles\Backup\TransLog_CorruptionChallenge_Tail.trn'
+	FROM DISK = N'C:\SQLSaturday\DBFiles\Backup\TransLog_CorruptionChallenge_Tail.trn'
 	WITH NORECOVERY;
 
 RESTORE DATABASE [CorruptionChallenge3]

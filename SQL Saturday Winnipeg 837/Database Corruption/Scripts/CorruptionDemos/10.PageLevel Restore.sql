@@ -31,21 +31,21 @@ go
 
 RESTORE DATABASE [AdventureWorksDW2014] 
 PAGE='1:429, 1:18453, 1:18460, 1:18459'
-FROM DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Full.bak'
+FROM DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Full.bak'
 WITH NORECOVERY
 
 RESTORE LOG [AdventureWorksDW2014] 
-FROM DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Log_1.trn'
+FROM DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Log_1.trn'
 WITH NORECOVERY
 
 -- 
 -- Take Additional Log Backup (Require Tail-of Log Backup to bring page to Transactionally Consistent state)
 BACKUP LOG [AdventureWorksDW2014]
-TO DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Log_OL.bak'
+TO DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Log_OL.bak'
 WITH FORMAT, NO_TRUNCATE
 
 RESTORE LOG [AdventureWorksDW2014] 
-FROM DISK = 'C:\DPS2018\DBFiles\Backup\AdventureWorksDW2014_Log_OL.bak'
+FROM DISK = 'C:\SQLSaturday\DBFiles\Backup\AdventureWorksDW2014_Log_OL.bak'
 WITH RECOVERY
 
 EXECUTE CheckDB.[dbo].[CheckDB_Extended] 

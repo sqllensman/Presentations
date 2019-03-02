@@ -42,7 +42,7 @@ DBCC WritePage(AdventureWorksDW2014, 1, 18453, 198, 4, 0x20202020,0);
 DBCC WritePage(AdventureWorksDW2014, 1, 18459, 16, 4, 0x61626162);
 DBCC WritePage(AdventureWorksDW2014, 1, 18460, 12, 4, 0x61626162);
 DBCC WritePage(AdventureWorksDW2014, 1, 18460, 16, 4, 0x61626162);
-DBCC WritePage(AdventureWorksDW2014, 1, 429, 59, 3, 0x202020);
+
 
 
 
