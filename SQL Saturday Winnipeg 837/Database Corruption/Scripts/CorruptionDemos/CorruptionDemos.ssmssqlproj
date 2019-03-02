@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CorruptionDemos">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="lensmansb:LENSMANSB\sqlle">
+          <Created>2017-08-07T21:23:29.3527016+10:00</Created>
+          <Type>SQL</Type>
+          <Server>lensmansb</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01.BackupReport.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01.BackupReport.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02.SP_Blitz.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02.SP_Blitz.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03.BackupChecksums.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03.BackupChecksums.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04.Setup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04.Setup.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05.Recover From NC Indexes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05.Recover From NC Indexes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07.TailOfLog.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>07.TailOfLog.sql</FullPath>
+        </FileNode>
+        <FileNode Name="08.Restore AdventureWorksDW.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>08.Restore AdventureWorksDW.sql</FullPath>
+        </FileNode>
+        <FileNode Name="09.CorruptDB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>09.CorruptDB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10.PageLevel Restore.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>10.PageLevel Restore.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11.PageLevelRestore_Unavailable.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>11.PageLevelRestore_Unavailable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12.GetDatabaseMetaData.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>12.GetDatabaseMetaData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13.Recover from Page.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>13.Recover from Page.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14.Recover to Point of Deletion.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>14.Recover to Point of Deletion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15.RecoverLog..sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>15.RecoverLog..sql</FullPath>
+        </FileNode>
+        <FileNode Name="Alerts.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Alerts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PageMetaData.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>PageMetaData.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
