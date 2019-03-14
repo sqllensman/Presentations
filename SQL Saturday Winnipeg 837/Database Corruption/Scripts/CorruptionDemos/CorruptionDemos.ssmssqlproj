@@ -109,6 +109,12 @@
           <AssociatedConnUserName />
           <FullPath>Alerts.sql</FullPath>
         </FileNode>
+        <FileNode Name="Broken.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Broken.sql</FullPath>
+        </FileNode>
         <FileNode Name="PageMetaData.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:lensmansb:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>lensmansb</AssociatedConnSrvName>
