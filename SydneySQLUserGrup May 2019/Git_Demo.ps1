@@ -15,7 +15,7 @@ set-location c:\github\dbatools
 git status
 
 # Switch to development branch
-git checkout development
+git checkout pre
 
 git status
 
